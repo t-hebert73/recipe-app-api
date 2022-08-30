@@ -4,6 +4,24 @@ name: Checks
 on: [push]
 
 jobs:
+  create-app-envfile:
+    name: Create app env file
+    runs-on: ubuntu-latest
+  
+    steps:
+      - name: Make envfile
+        uses: SpicyPizza/create-envfile@v1.3
+        with:
+          file_name: .app.env
+  create-db-envfile:
+    name: Create db env file
+    runs-on: ubuntu-latest
+  
+    steps:
+      - name: Make envfile
+        uses: SpicyPizza/create-envfile@v1.3
+        with:
+          file_name: .db.env
   test-lint:
     name: Test and Lint
     runs-on: ubuntu-20.04
